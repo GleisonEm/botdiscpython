@@ -1,8 +1,10 @@
 version: '3'
 services:
   web:
-    image: gemanueldev/botdiscpython:latest
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile # Use a imagem que você construiu
+    # image: gemanueldev/botdiscpython:latest
+    build:
+      context: .
+      dockerfile: Dockerfile # Use a imagem que você construiu
     container_name: botdiscordpython
+    env_file:
+      - .env

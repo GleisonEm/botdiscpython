@@ -1,9 +1,9 @@
-import discord
-from discord.ext import commands
-from discord.utils import get
-import requests
 import os
 
+import discord
+import requests
+from discord.ext import commands
+from discord.utils import get
 
 # Defina o prefixo de comando e o token do bot.
 PREFIX = "jorg"
@@ -38,7 +38,7 @@ async def play(ctx, url):
         await ctx.send("Você precisa estar em um canal de voz para usar este comando!")
         return
 
-    api_url = 'http://localhost:3000/download'
+    api_url = 'http://192.168.0.106:3000/download'
     response = requests.get(api_url, params={'url': url}, stream=True)
     if response.status_code == 200:
         # Salva o conteúdo do response em um arquivo local (audio.mp3)

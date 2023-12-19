@@ -1,8 +1,8 @@
 FROM python:3.12
 
-RUN apt-get update && \
-    apt-get install -y gcc && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update \
+    && apt-get install --no-install-recommends -y gcc g++ libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && \
     apt-get install -y ffmpeg && \
@@ -12,7 +12,7 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt -i https://pypi.example.com/simple/
+RUN pip install -r requirements.txt
 
 COPY . .
 
