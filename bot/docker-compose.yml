@@ -8,3 +8,4 @@ services:
     container_name: botdiscordpython
     env_file:
       - .env
+    restart: always
