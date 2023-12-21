@@ -18,4 +18,4 @@ COPY . .
 
 ENV TOKEN_DISCORD=${TOKEN_DISCORD}
 
-CMD [ "python", "./main2.py" ]
+CMD [ "python", "./mainstreamwithoutapi.py" ]
